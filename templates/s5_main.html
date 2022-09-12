@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Inventory Management</title>
+    <link rel="stylesheet" href="static/s5_main.css">
+    <script src="static/s5_main.js"></script>
+  </head>
+  <body>
+    <!-- (A) ITEMS LIST -->
+    <div id="itemWrap">
+      <div id="itemAdd" class="row" onclick="inv.toggle(2, true)">
+        <i class="mi">add</i>
+      </div>
+      <div id="itemList"></div>
+    </div>
+
+    <!-- (B) ADD/EDIT ITEM -->
+    <div id="iFormWrap" class="hide"><form id="iForm" onsubmit="return inv.save()">
+      <div id="iFormClose" onclick="inv.toggle(2)">X</div>
+      <label>SKU</label>
+      <input type="text" required name="sku">
+      <label>Item Name</label>
+      <input type="text" required name="name">
+      <label>Item Unit</label>
+      <input type="text" required name="unit">
+      <input type="submit" value="Save">
+    </form></div>
+
+    <!-- (C) ITEM MOVEMENT -->
+    <div id="moveWrap" class="hide">
+      <!-- (C1) CURRENT ITEM -->
+      <div id="moveHead">
+        <div id="moveItem"></div>
+        <div id="moveBack" class="mi" onclick="inv.toggle(1)">reply</div>
+      </div>
+
+      <!-- (C2) ADD MOVEMENT -->
+      <form id="moveAdd" onsubmit="return inv.savemvt()">
+        <select name="direction">
+          <option value="I">Receive</option>
+          <option value="O">Send</option>
+          <option value="T">Stock Take</option>
+        </select>
+        <input type="number" name="qty" placeholder="Quantity" required>
+        <input type="text" name="notes" placeholder="Notes (if any)">
+        <input type="submit" class="mi" value="done">
+      </form>
+
+      <!-- (C3) MOVEMENT LIST -->
+      <div id="moveList"></div>
+    </div>
+  </body>
+</html>

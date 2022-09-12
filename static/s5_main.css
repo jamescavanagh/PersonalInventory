@@ -1,0 +1,128 @@
+/* (A) MATERIAL ICONS */
+/* https://fonts.google.com/icons */
+@font-face{font-family:"Material Icons";font-style:normal;font-weight:400;src:url(maticon.woff2) format("woff2");}
+.mi{font-family:"Material Icons";font-weight:400;font-style:normal;font-size:24px;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:"liga";-webkit-font-smoothing:antialiased}
+
+/* (B) ENTIRE PAGE */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+  background: #f1f1f1;
+}
+#itemAdd, #iFormClose, input[type=button], input[type=submit] {
+  cursor: pointer;
+}
+input { padding: 10px; }
+label { margin: 10px 0; }
+.hide { display: none !important; }
+
+/* (C) ITEMS + MOVEMENT LIST */
+#itemWrap, #moveWrap {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+}
+.row {
+  display: flex;
+  margin: 10px 0;
+  border: 1px solid #d3d3d3;
+  background: #fff;
+}
+#itemAdd {
+  width: 100%;
+  padding: 20px 0;
+  border: 2px dashed #d3d3d3;
+  align-items: center;
+  justify-content: center;
+}
+.row .info {
+  flex-grow: 1;
+  padding: 10px;
+}
+.info .mi {
+  font-size: 18px;
+  color: #678ed5;
+  margin-right: 10px;
+}
+.row input {
+  color: #fff;
+  background: #284cb1;
+  border: 0;
+  padding: 0 15px;
+}
+
+/* (D) ADD/EDIT ITEM FORM */
+#iFormClose, #iFormWrap input[type=submit], #iFormWrap input[type=submit] {
+  color: #fff;
+  background: #a91c1c;
+}
+#iFormWrap input[type=submit], #iFormWrap input[type=submit] {
+  margin-top: 15px;
+  border: 0;
+}
+#iFormWrap {
+  position: fixed;
+  top: 0; left: 0; z-index: 999;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#iFormWrap form {
+  width: 400px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #d3d3d3;
+  position: relative;
+}
+#iFormClose {
+  position: absolute;
+  top: 0; right: 0;
+  padding: 10px;
+}
+#iFormWrap label, #iFormWrap input {
+  display: block;
+  width: 100%;
+}
+
+/* (E) ITEM MOVEMENT */
+#moveBack {
+  cursor: pointer;
+}
+
+/* (E1) MOVEMENT HEADER */
+#moveHead, #moveAdd {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  border: 2px dashed #d3d3d3;
+  background: #fff;
+}
+#moveItem, #moveBack, #moveAdd { padding: 10px; }
+#moveItem {
+  flex-grow: 1;
+  font-weight: 700;
+  font-size: 24px;
+}
+#moveBack, #moveAdd input[type=submit] {
+  color: #fff;
+  background: #a91c1c;
+  border: 0;
+}
+#moveAdd input[type=number], #moveAdd input[type=text] {
+  flex-grow: 1;
+}
+#moveList .row { align-items: center; }
+.row .mqty, .row .minfo { padding: 10px; }
+.row .mqty {
+  color: #fff;
+  width: 150px;
+}
+.row .mqtyI { background: #3115cf; }
+.row .mqtyO { background: #b71c1c; }
+.row .mqtyT { background: #0f8d30; }
