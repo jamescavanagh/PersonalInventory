@@ -45,7 +45,7 @@ def save (sku, name, unit, osku=""):
   if (osku==""):
     query(
       """INSERT INTO `items` 
-      (`item_sku`, `item_name`, `item_unit`, `item_qty`) 
+      (`item_sku`, `item_name`, `item_cat`, `item_qty`) 
       VALUES (?, ?, ?, 0)""",
       [sku, name, unit]
     )
@@ -55,9 +55,9 @@ def save (sku, name, unit, osku=""):
     # (G2-1) ITEM ITSELF
     query(
       """UPDATE `items` SET
-      `item_sku`=?, `item_name`=?, `item_unit`=?
+      `item_sku`=?, `item_name`=?, `item_cat`=?
       WHERE `item_sku`=?""",
-      [sku, name, unit, osku]
+      [sku, name, cat, osku]
     )
 
     # (G2-2) SKU FOR MOVEMENT HISTORY

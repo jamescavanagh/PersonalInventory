@@ -2,7 +2,7 @@
 CREATE TABLE items (
   item_sku TEXT,
   item_name TEXT NOT NULL,
-  item_unit TEXT NOT NULL,
+  item_cat TEXT NOT NULL,
   item_qty INTEGER NOT NULL,
   PRIMARY KEY("item_sku")
 );
