@@ -33,7 +33,7 @@ def rGet():
 def rSave():
   data = dict(request.form)
   print(data)
-  invlib.save(data["sku"], data["name"], data["unit"], data["osku"])
+  invlib.save(data["sku"], data["name"], data["cat"], data["osku"])
   return "OK"
 
 # (C4) DELETE ITEM

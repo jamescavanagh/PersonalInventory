@@ -1,7 +1,7 @@
 # (A) LOAD SQLITE MODULE
 import sqlite3
 from datetime import datetime
-DBFILE = "inventory.db"
+DBFILE = "./inventory.db"
 
 # (B) HELPER - RUN SQL QUERY
 def query (sql, data):
@@ -40,14 +40,14 @@ def getMvt (sku):
   return res
 
 # (G) SAVE ITEM
-def save (sku, name, unit, osku=""):
+def save (sku, name, cat, osku=""):
   # (G1) ADD NEW
   if (osku==""):
     query(
       """INSERT INTO `items` 
       (`item_sku`, `item_name`, `item_cat`, `item_qty`) 
       VALUES (?, ?, ?, 0)""",
-      [sku, name, unit]
+      [sku, name, cat]
     )
 
   # (G2) UPDATE
